@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  jekyll:
+    build: .
+    volumes:
+      - .:/srv/jekyll:Z
+      - bundle_data:/usr/local/bundle
+    ports:
+      - "4000:4000"
+    environment:
+      JEKYLL_ENV: development
+
+volumes:
+  bundle_data:
